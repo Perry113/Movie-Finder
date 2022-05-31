@@ -4,8 +4,10 @@ import axios from axios
 import Search from './components/Search';
 
 function App() {
+  const apiulr = "http://www.omdbapi.com/?apikey=dfe6d368";
+
   const [state, setState] = useState({
-    s: '''',
+    s: "",
     results: [], 
     selected: {}
   });
@@ -13,8 +15,12 @@ function App() {
 
   const search = (e) => {
     if (e.key === "Enter") {
-      axios(apiurl + "&s=" +state.s).then((date) => {
-        
+      axios(apiurl + "&s=" +state.s).then((data) => {
+        let result = data.Search;
+
+        setState(prevState => {
+          return { ...prevState, results: results }
+        })
       })
     }
   }
