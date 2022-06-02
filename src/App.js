@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import axios from axios
 
 import Search from './components/Search';
+import Results from './components/Results';
 
 function App() {
   const apiulr = "http://www.omdbapi.com/?apikey=dfe6d368";
@@ -41,6 +42,7 @@ function App() {
     </header>
     <main>
       <Search handleInput={handleInput} />
+      <Results results={state.results} />
     </main>
   </div>
   );
