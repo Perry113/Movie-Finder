@@ -66,7 +66,7 @@ section {
   padding: 15px;
   display: flex;
   flex-direction: column;
-  pointer: cursor;
+  cursor: pointer;
 
 }
 
@@ -84,3 +84,37 @@ section {
   flex: 1 1 100%;
   transition: 0.4s ease-out;
 }
+
+.results .result:hover h3 {
+  background: #FFF;
+  color: #223343;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color:  #445565;
+
+  overflow-y: scroll;
+}
+
+.popup .contetnt {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 25px;
+
+  color: #FFF;
+}
+
+.popup .contetnt{
+  font-size:28px;
+  font-weight: 600;
+
+}
+
+.popup .contetnt
