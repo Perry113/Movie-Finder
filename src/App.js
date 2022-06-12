@@ -1,28 +1,26 @@
 import React, {useState} from 'react'
-import axios from axios
+import axios from 'axios';
 
 import Search from './components/Search';
 import Results from './components/Results';
 
 function App() {
-  const apiulr = "http://www.omdbapi.com/?apikey=dfe6d368";
-
   const [state, setState] = useState({
     s: "",
     results: [], 
     selected: {}
   });
-
+  const apiurl = "http://www.omdbapi.com/?apikey=dac5bce5";
 
   const search = (e) => {
     if (e.key === "Enter") {
-      axios(apiurl + "&s=" +state.s).then((data) => {
-        let result = data.Search;
+      axios(apiurl + "&s=" +state.s).then(({data}) => {
+        let results = data.Search;
 
         setState(prevState => {
           return { ...prevState, results: results }
         })
-      })
+      });
     }
   }
 
@@ -30,7 +28,7 @@ function App() {
   const handleInput = (e) => {
     let s= e.target.value;
 
-    setState(prevStare => {
+    setState(prevState => {
       return { ...prevState, s: s }
     });
   }
@@ -41,7 +39,7 @@ function App() {
       <h1>Movie Database</h1>
     </header>
     <main>
-      <Search handleInput={handleInput} />
+      <Search handleInput={handleInput}  search={search}/>
       <Results results={state.results} />
     </main>
   </div>
