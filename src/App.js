@@ -34,7 +34,7 @@ function App() {
     });
   }
 
-  const openPopuo = id => {
+  const openPopup = id => {
     axios(apiurl + "&i=" + id).then(({ data }) => {
       let result = data;
 
@@ -58,7 +58,7 @@ function App() {
     <main>
       <Search handleInput={handleInput}  search={search}/>
 
-      <Results results={state.results} />
+      <Results results={state.results} openPopup={openPopup} />
 
     {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} closePopup={closePopup} /> : false}
     </main>
