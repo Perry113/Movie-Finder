@@ -38,8 +38,10 @@ function App() {
     axios(apiurl + "&i=" + id).then(({ data }) => {
       let result = data;
 
+      console.log(result);
+
       setState(prevState => {
-        return { ...prevState, selected: result}
+        return { ...prevState, selected: result }
       });
     });
   }

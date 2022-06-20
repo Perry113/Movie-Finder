@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'montseserrat', sans-serif;
+  font-family: 'montserrat', sans-serif;
   background-color: #234;
 }
 
@@ -22,7 +22,7 @@ header h1 {
 
 main {
   width: 100%;
-  max-width: 100%;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -150,7 +150,7 @@ section {
   font-weight: 700;
 
   background: #4484c4;
-  color: #223343;
+  color: #FFF;
   border-radius: 8px;
   border: none;
   outline: none;
